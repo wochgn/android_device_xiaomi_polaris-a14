@@ -7,10 +7,14 @@
 $(call inherit-product, device/xiaomi/polaris/device.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_FACE_UNLOCK_SUPPORTED := true
+$(call inherit-product, vendor/aosp/config/common.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_polaris
+PRODUCT_NAME := aosp_polaris
 PRODUCT_DEVICE := polaris
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi MIX 2S
@@ -25,3 +29,15 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_PRODUCT="polaris"
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+TARGET_BUILD_APERTURE_CAMERA := true
+
+RISING_MAINTAINER := "libchara-dev"
+
+TARGET_ENABLE_BLUR := true
+
+TARGET_HAS_UDFPS := true
+
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
+RISING_CHIPSET := "高通骁龙™845"
